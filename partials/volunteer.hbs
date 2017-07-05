@@ -1,0 +1,67 @@
+{{#if resume.volunteer.length}}
+  <section id="volunteer">
+    <div class="grid grid--no-spacing">
+      <div class="cell cell--2-col cell--2-col-tablet cell--4-col-phone">
+        <h2 class="typography--adjust-margin">Volunteer</h2>
+      </div>
+      <div class="cell cell--10-col cell--6-col-tablet cell--4-col-phone">
+        {{#each resume.volunteer}}
+          <div class="item">
+            <p>
+              <strong>
+                <span class="date pull-right">
+                  {{#if startDate}}
+                    <span class="startDate">
+                      {{formatDate startDate day="numeric" month="short" year="numeric"}}
+                    </span>
+                  {{/if}}
+                  {{#if endDate}}
+                    <span class="endDate">
+                      - {{formatDate endDate day="numeric" month="short" year="numeric"}}
+                    </span>
+                  {{else}}
+                    <span class="endDate">
+                      - Present
+                    </span>
+                  {{/if}}
+                </span>
+                {{#if position}}
+                  <span class="position">
+                    {{position}}
+                  </span>
+                {{/if}}
+                {{#if position}}
+                  {{#if organization}}
+                    <span>·</span>
+                  {{/if}}
+                {{/if}}
+                {{#if organization}}
+                  <span class="company">
+                    {{organization}}
+                  </span>
+                {{/if}}
+                {{#if website}}
+                  <span class="website">
+                    <a href="{{website}}">{{website}}</a>
+                  </span>
+                {{/if}}
+              </strong>
+            </p>
+            {{#if summary}}
+              <div class="summary">
+                <p>{{summary}}</p>
+              </div>
+            {{/if}}
+            {{#if highlights.length}}
+              <ul class="highlights">
+                {{#each highlights}}
+                  <li>{{.}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}

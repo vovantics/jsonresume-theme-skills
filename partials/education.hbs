@@ -1,0 +1,68 @@
+{{#if resume.education.length}}
+  <section id="education">
+    <div class="grid grid--no-spacing">
+      <div class="cell cell--2-col cell--2-col-tablet cell--4-col-phone">
+        <h2 class="typography--adjust-margin">Education</h2>
+      </div>
+      <div class="cell cell--10-col cell--6-col-tablet cell--4-col-phone">
+        {{#each resume.education}}
+          <div class="item">
+            <p>
+              <strong>
+                <span class="date pull-right">
+                  {{#if startDate}}
+                  <span class="startDate">
+                    {{formatDate startDate day="numeric" month="short" year="numeric"}}
+                  </span>
+                  {{/if}}
+                  {{#if endDate}}
+                  <span class="endDate">
+                    - {{formatDate endDate day="numeric" month="short" year="numeric"}}
+                  </span>
+                  {{else}}
+                  <span class="endDate">
+                    - Present
+                  </span>
+                  {{/if}}
+                </span>
+                {{#if institution}}
+                  <span class="institution">
+                    {{institution}}
+                  </span>
+                {{/if}}
+              </strong>
+              <br />
+              {{#if area}}
+                <span class="area">
+                  {{area}}
+                </span>
+              {{/if}}
+              {{#if studyType}}
+                <span class="studyType">
+                  {{studyType}}
+                </span>
+              {{/if}}
+              {{#if studyType}}
+                {{#if gpa}}
+                  <span>·</span>
+                {{/if}}
+              {{/if}}
+              {{#if gpa}}
+                <span class="gpa">
+                  GPA: {{gpa}}
+                </span>
+              {{/if}}
+            </p>
+            {{#if courses.length}}
+              <ul class="courses">
+                {{#each courses}}
+                  <li>{{.}}</li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}

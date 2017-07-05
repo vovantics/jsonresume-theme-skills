@@ -1,0 +1,70 @@
+{{#resume.basics}}
+  <section id="basics-contact-location">
+    <section class="contact">
+      {{#if phone}}
+        <div class="phone">
+          {{phone}}
+        </div>
+      {{/if}}
+      {{#if email}}
+        <div class="email">
+          {{email}}
+        </div>
+      {{/if}}
+      {{#if website}}
+        <div class="website">
+          <a href="{{website}}">{{website}}</a>
+        </div>
+      {{/if}}
+    </section>
+    {{#location}}
+      <section id="location">
+        {{#if address}}
+          <div class="address">
+            {{address}}
+          </div>
+        {{/if}}
+        <div>
+          {{#if city}}
+            <span class="city">{{city}}</span>,
+          {{/if}}
+          {{#if region}}
+            <span class="region">{{region}}</span>
+          {{/if}}
+        </div>
+        <div>
+          {{#if postalCode}}
+            <span class="postalCode">{{postalCode}}</span>,
+          {{/if}}
+          {{#if countryCode}}
+            <span class="countryCode">{{countryCode}}</span>
+          {{/if}}
+        </div>
+      </section>
+    {{/location}}
+    {{#if profiles.length}}
+      <section id="profiles">
+        {{#each profiles}}
+          <div>
+            {{#if network}}
+              <strong class="network">
+                {{network}}
+              </strong>
+            {{/if}}
+            {{#if username}}
+              {{#if url}}
+                <span class="url">
+                  <a href="{{url}}">{{username}}</a>
+                </span>
+              {{else}}
+                <span class="username">
+                  {{username}}
+                </span>
+              {{/if}}
+            {{/if}}
+          </div>
+        {{/each}}
+      </section>
+    {{/if}}
+  </section>
+{{/resume.basics}}

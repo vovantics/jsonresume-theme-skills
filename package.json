@@ -1,0 +1,15 @@
+{
+  "name": "jsonresume-theme-skills",
+  "version": "1.0.0",
+  "description": "Skills theme for JSON Resume",
+  "author": "Stevo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vovantics/jsonresume-theme-skills"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^2.0.0-alpha.4",
+    "handlebars-intl": "^1.1.2"
+  }
+}
